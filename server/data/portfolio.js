@@ -1,53 +1,54 @@
 export const portfolio = {
   name: "Javier Yeow",
   headline:
-    "Penultimate Information Systems Student at the National University of Singapore",
+    "Penultimate Information Systems Student @ National University of Singapore",
   summary:
-    "Information Systems undergraduate at NUS with internship experience across software engineering and building reliable systems. My recent work spans backend platform engineering at Binance, applied ML research at NUS, and risk infrastructure development at PhillipCapital.",
+    "I'm Javier, a Y3 Information Systems undergraduate at NUS. My interests lie in software engineering, particularly backend engineering, as I love delving into complex systems and making things work! I think what I really like about backend engineering is how you don't often get to 'see' the results, but you can definitely feel it.",
   email: "javieryeow@gmail.com",
-  phone: "+65 87821669",
   location: "Singapore",
   profileImage: "/assets/img/my_profile.jpeg",
-  highlights: [
-    { label: "Internships and research roles", value: "3" },
-    { label: "LLM evals reviewed weekly", value: "10k+" },
-    { label: "Client positions monitored", value: "150k+" },
-  ],
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/javieryeow/" },
     { label: "GitHub", href: "https://github.com/javieryeow" },
+    { label: "Email", href: "mailto:javieryeow@gmail.com" },
   ],
   projects: [
     {
-      title: "Blockchain Portfolio Risk Assessment Web Application",
-      period: "December 2024",
-      stack: ["Django", "Python", "Machine Learning"],
+      title: "JobSphere",
+      period: "August 2025 - November 2025",
+      stack: ["Next.js", "JavaScript", "Node.js", "MongoDB"],
       description:
-        "Built a web application that analyzes blockchain wallets and portfolios to generate risk assessments, token price predictions, and metrics that support investment strategy decisions.",
+        "JobSphere is an AI-powered recruitment platform designed to streamline the hiring lifecycle across multiple user portals. It supports secure role-based workflows, real-time interactions via websockets, and intelligent job recommendations using transformer-based embeddings. Job matching quality was also improved via a two-stage search and reranking engine.",
+    },
+    {
+      title: "Premier League Match Score Predictor",
+      period: "June 2025",
+      stack: ["Pandas", "NumPy", "scikit-learn"],
+      description:
+        "A fun little ML side project that I built to forecast EPL match outcomes and scorelines based on historical data. Built with XGBoost classification and regression models, this project uses rolling backtesting to simulate real-world forecasting and evaluates performance through accuracy, RMSE, and Brier score.",
     },
     {
       title: "TaskHive: Digital Personal Assistant",
       period: "December 2024 - January 2025",
       stack: ["Vue", "JavaScript", "Firebase", "Google Cloud"],
       description:
-        "Developed a full-stack productivity platform with shared calendars, Gmail views, automated reminders, and LLM-powered email summarization for faster communication workflows.",
+        "Developed a full-stack productivity platform with shared calendars, email views, automated reminders, and LLM-powered email summarization for faster communication workflows.",
     },
     {
-      title: "Market Analysis for Beijing Real Estate Investments",
-      period: "November 2024",
-      stack: ["Python", "R", "Tableau", "Excel"],
+      title: "Blockchain Portfolio Risk Assessment Web Application",
+      period: "December 2024",
+      stack: ["Django", "Python", "Time-series forecasting"],
       description:
-        "Analyzed Beijing real estate data to identify profit-maximizing investment strategies and produced clear visual narratives to communicate findings.",
-    },
-    {
-      title: "mediSport",
-      period: "May 2024 - July 2024",
-      stack: ["Swift", "Xcode", "Supabase"],
-      description:
-        "Created an iOS application that maps pain areas to plausible sports injury diagnoses and surfaces relevant treatment guidance and medical context.",
+        "Built a web application that analyzes blockchain wallets and portfolios to generate risk assessments, token price forecasts, and portfolio health metrics to support investment strategy decisions.",
     },
   ],
   experience: [
+    {
+      company: "PayPal",
+      role: "Software Engineer Intern",
+      period: "May 2026 - November 2026",
+      details: ["Incoming SWE Intern at PayPal!"],
+    },
     {
       company: "Binance",
       role: "Software Engineer Intern",
@@ -79,70 +80,40 @@ export const portfolio = {
       ],
     },
   ],
-  education: [
-    {
-      school: "National University of Singapore",
-      period: "August 2023 - May 2027",
-      program: "Bachelor of Computing (Hons), Information Systems",
-      details:
-        "Minor in Quantitative Finance. NUS Merit Scholar. Activities include Sheares Hall Football Captain and NUS Independent Software Developer.",
-      result: "Expected graduation: May 2027",
-    },
-  ],
   skills: [
     {
       title: "Languages and frameworks",
       items: [
-        "TypeScript",
+        "Java",
+        "Python",
         "JavaScript",
+        "TypeScript",
         "React",
         "Next.js",
+        "Node.js",
         "Vue",
-        "Python",
-        "Java",
-        "Go",
         "C#",
         "Swift",
         "Flutter",
-        "HTML",
-        "CSS",
       ],
     },
     {
       title: "Data and infrastructure",
       items: [
-        "SQL",
         "PostgreSQL",
         "MySQL",
         "MongoDB",
         "Docker",
         "Git",
         "Jupyter",
-        "Tableau",
+        "AWS",
+        "ElasticSearch",
         "Google Cloud",
-        "Firebase",
-      ],
-    },
-    {
-      title: "Applied strengths",
-      items: [
-        "Backend Engineering",
-        "Machine Learning",
-        "NLP",
-        "Financial Risk Systems",
-        "REST APIs",
-        "CI/CD",
-        "Data Analysis",
       ],
     },
   ],
   interests: [
-    "Outside engineering work, I stay heavily involved in football and student leadership. Serving as Sheares Hall Football Captain has kept me grounded in teamwork, discipline, and leading under pressure.",
-    "I am also drawn to hackathons, fintech, AI, and data-intensive product building, especially where strong technical execution needs to meet real user and business outcomes.",
-  ],
-  awards: [
-    "NUS Merit Scholar",
-    "Sheares Hall Football Captain",
-    "NUS Independent Software Developer",
+    "Outside of engineering work, I love football, playing games and meeting new people!",
+    "I've also started getting into coffee-making and murder mystery films :)",
   ],
 };
