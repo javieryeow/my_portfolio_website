@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
 
+const backendLocalUrl =
+  import.meta.env.VITE_BACKEND_LOCAL_URL || "http://localhost:3001";
+const backendDeployedUrl =
+  import.meta.env.VITE_BACKEND_DEPLOYED_URL ||
+  "https://your-backend-project.vercel.app";
+const backendTarget =
+  (import.meta.env.VITE_BACKEND_TARGET || "local").toLowerCase();
+const apiBaseUrl =
+  backendTarget === "deployed" ? backendDeployedUrl : backendLocalUrl;
+const normalizedApiBaseUrl = apiBaseUrl.replace(/\/+$/g, "");
+
 const navItems = [
   { label: "about", href: "about" },
   { label: "experience", href: "experience" },
@@ -90,7 +101,7 @@ function App() {
 
     async function loadPortfolio() {
       try {
-        const response = await fetch("/api/portfolio");
+        const response = await fetch(`${normalizedApiBaseUrl}/api/portfolio`);
         if (!response.ok) {
           throw new Error("Failed to load portfolio data");
         }
