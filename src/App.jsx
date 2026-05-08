@@ -9,7 +9,6 @@ const backendTarget =
   (import.meta.env.VITE_BACKEND_TARGET || backendTargetDefault).toLowerCase();
 const apiBaseUrl =
   backendTarget === "deployed" ? backendDeployedUrl : backendLocalUrl;
-const normalizedApiBaseUrl = apiBaseUrl.replace(/\/+$/g, "");
 
 const navItems = [
   { label: "about", href: "about" },
@@ -101,7 +100,7 @@ function App() {
 
     async function loadPortfolio() {
       try {
-        const response = await fetch(`${normalizedApiBaseUrl}/api/portfolio`);
+        const response = await fetch(`${apiBaseUrl}/api/portfolio`);
         if (!response.ok) {
           throw new Error("Failed to load portfolio data");
         }
