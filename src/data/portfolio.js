@@ -1,3 +1,5 @@
+import profileImage from "../../assets/img/my_profile.jpeg";
+
 export const portfolio = {
   name: "Javier Yeow",
   headline:
@@ -6,7 +8,7 @@ export const portfolio = {
     "I'm Javier, a Y3 Information Systems undergraduate at NUS. My interests lie in software engineering, particularly backend engineering, as I love delving into complex systems and making things work! I think what I really like about backend engineering is how you don't often get to 'see' the results, but you can definitely feel it.",
   email: "javieryeow@gmail.com",
   location: "Singapore",
-  profileImage: "/assets/img/my_profile.jpeg",
+  profileImage,
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/javieryeow/" },
     { label: "GitHub", href: "https://github.com/javieryeow" },

@@ -1,14 +1,5 @@
 import { useEffect, useState } from "react";
-
-const backendLocalUrl =
-  import.meta.env.VITE_BACKEND_LOCAL_URL || "http://localhost:3001";
-const backendDeployedUrl =
-  import.meta.env.VITE_BACKEND_DEPLOYED_URL || window.location.origin;
-const backendTargetDefault = import.meta.env.DEV ? "local" : "deployed";
-const backendTarget =
-  (import.meta.env.VITE_BACKEND_TARGET || backendTargetDefault).toLowerCase();
-const apiBaseUrl =
-  backendTarget === "deployed" ? backendDeployedUrl : backendLocalUrl;
+import { portfolio } from "./data/portfolio";
 
 const navItems = [
   { label: "about", href: "about" },
@@ -74,8 +65,6 @@ function SocialIcon({ label }) {
 }
 
 function App() {
-  const [portfolio, setPortfolio] = useState(null);
-  const [status, setStatus] = useState("loading");
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -96,38 +85,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    let ignore = false;
-
-    async function loadPortfolio() {
-      try {
-        const response = await fetch(`${apiBaseUrl}/api/portfolio`);
-        if (!response.ok) {
-          throw new Error("Failed to load portfolio data");
-        }
-        const data = await response.json();
-        if (!ignore) {
-          setPortfolio(data);
-          setStatus("ready");
-        }
-      } catch (error) {
-        if (!ignore) {
-          setStatus("error");
-        }
-      }
-    }
-
-    loadPortfolio();
-
-    return () => {
-      ignore = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (status !== "ready") {
-      return undefined;
-    }
-
     const syncFromLocation = () => {
       window.requestAnimationFrame(() => {
         scrollToSection(getSectionIdFromPath(window.location.pathname));
@@ -140,7 +97,7 @@ function App() {
     return () => {
       window.removeEventListener("popstate", syncFromLocation);
     };
-  }, [status]);
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -153,18 +110,6 @@ function App() {
     const nextPath = href === "about" ? "/" : `/${href}`;
     window.history.pushState({}, "", nextPath);
     scrollToSection(href);
-  }
-
-  if (status === "loading") {
-    return <div className="app-shell loading-state">Loading portfolio...</div>;
-  }
-
-  if (status === "error" || !portfolio) {
-    return (
-      <div className="app-shell loading-state">
-        Unable to load portfolio data. Start the backend and try again.
-      </div>
-    );
   }
 
   return (
