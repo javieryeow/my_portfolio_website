@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 const backendLocalUrl =
   import.meta.env.VITE_BACKEND_LOCAL_URL || "http://localhost:3001";
 const backendDeployedUrl =
-  import.meta.env.VITE_BACKEND_DEPLOYED_URL ||
-  "https://your-backend-project.vercel.app";
+  import.meta.env.VITE_BACKEND_DEPLOYED_URL || window.location.origin;
+const backendTargetDefault = import.meta.env.DEV ? "local" : "deployed";
 const backendTarget =
-  (import.meta.env.VITE_BACKEND_TARGET || "local").toLowerCase();
+  (import.meta.env.VITE_BACKEND_TARGET || backendTargetDefault).toLowerCase();
 const apiBaseUrl =
   backendTarget === "deployed" ? backendDeployedUrl : backendLocalUrl;
 const normalizedApiBaseUrl = apiBaseUrl.replace(/\/+$/g, "");
