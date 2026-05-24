@@ -208,7 +208,7 @@ function App() {
         <section className="section" id="experience">
           <div className="section-heading">
             <p className="eyebrow">Experience</p>
-            <h2>internships and experiences.</h2>
+            <h2>internships and experiences</h2>
           </div>
           <div className="timeline">
             {portfolio.experience.map((item) => (
