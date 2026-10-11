@@ -5,7 +5,7 @@ export const portfolio = {
   headline:
     "Penultimate Information Systems Student @ National University of Singapore",
   summary:
-    "I'm Javier, a Y3 Information Systems undergraduate at NUS. My interests lie in software engineering, particularly backend engineering, as I love delving into complex systems and making things work! I think what I really like about backend engineering is how you don't often get to 'see' the results, but you can definitely feel it.",
+    "I'm Javier, an Information Systems undergraduate at NUS. My interests lie in software engineering, particularly backend engineering, as I love delving into complex systems and making things work! I think what I really like about backend engineering is how you don't often get to 'see' the results, but you can definitely feel it.",
   email: "javieryeow@gmail.com",
   location: "Singapore",
   profileImage,
@@ -48,8 +48,12 @@ export const portfolio = {
     {
       company: "PayPal",
       role: "Software Engineer Intern",
-      period: "May 2026 - November 2026",
-      details: ["Incoming SWE Intern at PayPal!"],
+      period: "May 2026 - Present",
+      details: [
+        "Built and enhanced backend systems for a global compliance policy search platform, including support for more complex multi-field queries.",
+        "Optimized cache mechanism by introducing incremental refreshes, reducing refresh overhead and database query spikes.",
+        "Developed an AI-powered natural-language query layer using agent and tool-calling workflows to translate user questions into structured policy searches.",
+      ],
     },
     {
       company: "Binance",
